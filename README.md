@@ -114,10 +114,10 @@ spendwise/
 
 | Name        | Role                |
 |-------------|---------------------|
-| Lavanya     | Frontend (Lead)     |
+| Lavanya     | Frontend Lead       |
 | Mehul       | Logic & Testing     |
 | Nitesh      | Authentication      |
-| Rahul       |                     |
+| Rahul       | Frontend developer  |
 
 ---
 
