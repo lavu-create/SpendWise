@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>SpendWise – Shared Wallets with On‑Chain Transparency</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#101827" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">
+      <span class="logo">👜</span>
+      <span class="title">SpendWise</span>
+    </div>
+    <div class="nav-actions">
+      <button id="connectBtn" class="btn primary">Connect Wallet</button>
+      <div id="walletInfo" class="wallet-info hidden">
+        <span id="walletAddress"></span>
+        <button id="switchNetworkBtn" class="btn ghost">Switch to Morph Testnet</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="alerts" class="alerts"></div>
+
+    <!-- Hero -->
+    <section class="card hero">
+      <div>
+        <h1>SpendWise – Family & Group Shared Wallet</h1>
+        <p class="muted">
+          Create shared vaults, set per‑member & category caps, and track spending with real‑time tables.
+          On‑chain transparency ready for Morph testnet.
+        </p>
+        <div class="hero-actions">
+          <button id="createVaultOpen" class="btn">➕ Create Vault</button>
+          <button id="importVaultOpen" class="btn ghost">📥 Import Vault (JSON)</button>
+          <input id="importVaultInput" type="file" accept="application/json" class="hidden" />
+        </div>
+      </div>
+      <ul class="keypoints">
+        <li>🔒 Per‑member & per‑category spending caps</li>
+        <li>🚫 Freeze overspending accounts</li>
+        <li>🧾 Export/Import vault JSON</li>
+        <li>🧱 On‑chain (wire later)</li>
+      </ul>
+    </section>
+
+    <!-- Vault Selector -->
+    <section class="card">
+      <div class="section-header">
+        <h2>Vaults</h2>
+        <div class="row gap">
+          <select id="vaultSelect"></select>
+          <button id="exportVaultBtn" class="btn ghost">Export Vault JSON</button>
+          <button id="deleteVaultBtn" class="btn danger ghost">Delete Vault</button>
+        </div>
+      </div>
+      <div id="vaultMeta" class="grid two">
+        <div>
+          <h3 class="subtle">Details</h3>
+          <p><strong>Name:</strong> <span id="vaultNameLabel">—</span></p>
+          <p><strong>Owner:</strong> <span id="vaultOwnerLabel">—</span></p>
+          <p><strong>Created:</strong> <span id="vaultCreatedLabel">—</span></p>
+        </div>
+        <div>
+          <h3 class="subtle">Settings</h3>
+          <label class="label">Global Category Caps (per month)</label>
+          <div id="globalCaps" class="cap-grid"></div>
+          <button id="saveGlobalCapsBtn" class="btn sm">Save Global Caps</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Members -->
+    <section class="card">
+      <div class="section-header">
+        <h2>Members & Limits</h2>
+        <div class="row gap">
+          <input id="memberName" class="input" placeholder="Member name (e.g., Rahul)" />
+          <input id="memberAddress" class="input" placeholder="0x… address" />
+          <input id="memberMonthlyCap" type="number" class="input" min="0" placeholder="Monthly cap (e.g., 500)" />
+          <button id="addMemberBtn" class="btn">Add Member</button>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table" id="membersTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Monthly Cap</th>
+              <th>Frozen</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody><!-- populated by JS --></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Add Transaction -->
+    <section class="card">
+      <h2>Add Transaction</h2>
+      <div class="grid four">
+        <select id="txnMember"></select>
+        <select id="txnCategory"></select>
+        <input id="txnAmount" type="number" min="0" step="0.01" class="input" placeholder="Amount" />
+        <input id="txnNote" class="input" placeholder="Note (optional)" />
+      </div>
+      <div class="row gap">
+        <button id="addTxnBtn" class="btn">Add</button>
+        <label class="row center gap-sm">
+          <input id="simulateOnChain" type="checkbox" />
+          Simulate on‑chain (generate a fake hash & explorer link)
+        </label>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table" id="txnsTable">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Member</th>
+              <th>Category</th>
+              <th>Amount</th>
+              <th>Note</th>
+              <th>Tx Hash</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody><!-- populated by JS --></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Create Vault Modal -->
+    <dialog id="createVaultModal" class="modal">
+      <form method="dialog" class="modal-body">
+        <h3>Create Vault</h3>
+        <input id="vaultNameInput" class="input" placeholder="Vault name (e.g., Family Wallet)" />
+        <div class="row end gap">
+          <button class="btn ghost" value="cancel">Cancel</button>
+          <button id="createVaultBtn" class="btn primary" value="default">Create</button>
+        </div>
+      </form>
+    </dialog>
+  </main>
+
+  <footer class="footer">
+    <span>SpendWise – Transparent. Accountable. Empowering. ✨</span>
+    <span class="muted">Team: Lavanya · Mehul · Nitesh · Rahul</span>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
