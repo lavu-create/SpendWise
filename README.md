@@ -1,7 +1,7 @@
 # 👜 SpendWise – A Family & Group Shared Wallet with On‑Chain Transparency  
 
-> ⚡️ Built for [Morph's Consumer Buildathon] – Empowering Families & Groups with Financial Control  
-> 👩‍💻 By Team SpendWise: [Team Member 1] · [Team Member 2] · [Team Member 3] · [Team Member 4]  
+> ⚡️ Built for Morph's Consumer Buildathon – Empowering Families & Groups with Financial Control  
+> 👩‍💻 By Team SpendWise: Lavanya · Mehul · Nitesh · Rahul 
 
 ---
 
@@ -13,7 +13,7 @@ SpendWise solves this by creating a **transparent shared wallet system** that en
 - 💰 Track all group or family transactions  
 - 🔒 Set per‑member and per‑category limits  
 - 📊 View real‑time dashboards and alerts  
-- 🪙 Build trust with on‑chain accountability  
+- 🛡️ Build trust with on‑chain accountability  
 
 ---
 
@@ -22,7 +22,7 @@ SpendWise solves this by creating a **transparent shared wallet system** that en
 - 💰 **Shared Wallets** – Create pooled vaults for family or groups  
 - 🔒 **Spending Limits** – Enforce per‑member & category caps  
 - 📊 **Real‑Time Dashboards** – Visual reports and instant alerts  
-- 🪙 **On‑Chain Transparency** – Immutable records on Morph testnet  
+- 🔍 **On‑Chain Transparency** – Immutable records on Morph testnet  
 - 🚫 **Smart Controls** – Block overspending & freeze member accounts  
 
 ---
@@ -39,14 +39,14 @@ SpendWise empowers families and groups to:
 
 ## 🧰 Tech Stack  
 
-| Layer         | Technologies                                  |
-|---------------|-----------------------------------------------|
-| Frontend      | React (Vite), HTML, CSS, JavaScript           |
-| Blockchain    | Solidity, Morph Testnet (EVM)                 |
-| Wallet Auth   | WalletConnect, MetaMask                       |
-| Backend       | Supabase / Firebase for caching & analytics   |
-| Analytics     | Chart.js (category trends & budgets)          |
-| Deployment    | Vercel / GitHub Pages (frontend), Testnet     |
+| Layer       | Tech Used                 |
+|-------------|---------------------------|
+| Frontend    | HTML, CSS, JavaScript     |
+| Blockchain  | Solidity (Morph Testnet)  |
+| Wallet Auth | MetaMask (basic wallet)   |
+| Backend     | Node.js (Express), JSON   |
+| Database    | LocalStorage / Firebase   |
+| Deployment  | GitHub Pages / Render     |
 
 ---
 
@@ -96,13 +96,15 @@ SpendWise provides interactive dashboards for:
 
 ```
 spendwise/  
-├── app/                 → Frontend (React + Vite)  
-│   └── src/             → Components & Pages  
-├── contracts/           → Hardhat smart contracts  
-│   └── contracts/       → Solidity vault contracts  
-├── docs/                → Architecture diagrams, demo script  
-├── README.md            → Overview and documentation  
-├── LICENSE              → MIT License  
+├── frontend/          → Complete UI (HTML, CSS, JS)  
+│   └── assets/        → Icons, wallet logos, images (used in frontend)  
+├── backend/           → APIs for caching events & managing members  
+├── blockchain/        → Solidity vault contracts (Morph testnet)  
+├── auth/              → Wallet authentication (MetaMask / WalletConnect)  
+├── analytics/         → Spending dashboards & category visualizations  
+├── docs/              → Architecture diagrams & demo script  
+├── README.md          → Project overview and documentation  
+├── LICENSE            → MIT License  
 
 ```
 
@@ -110,12 +112,12 @@ spendwise/
 
 ## 🧑‍💻 Team SpendWise  
 
-| Name        | Role                | Contribution                               |
-|-------------|---------------------|--------------------------------------------|
-| [Member 1]  | Frontend Lead       | React UI, dashboards, Chart.js integration |
-| [Member 2]  | Blockchain Engineer | Solidity contracts & deployment            |
-| [Member 3]  | Backend Integrator  | Supabase/Firebase, event indexing          |
-| [Member 4]  | DevOps / QA         | Deployment, testing, CI/CD setup           |
+| Name        | Role                |
+|-------------|---------------------|
+| Lavanya     | Frontend (Lead)     |
+| Mehul       | Logic & Testing     |
+| Nitesh      | Authentication      |
+| Rahul       |                     |
 
 ---
 
